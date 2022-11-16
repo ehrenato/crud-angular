@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { CursosService } from '../services/cursos.service';
 import { catchError, Observable, of } from 'rxjs';
 
+
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
@@ -15,7 +19,10 @@ export class CursosComponent implements OnInit {
 
   
 
-  constructor(private cursosService: CursosService) {
+  constructor(
+    private cursosService: CursosService,
+    private router: Router,
+    private route: ActivatedRoute) {
   
     this.cursos$ = this.cursosService.list()
     .pipe(
@@ -32,7 +39,8 @@ export class CursosComponent implements OnInit {
   }
 
   onAdd() {
-    console.log('onAdd');
+    //console.log('onAdd');
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 }

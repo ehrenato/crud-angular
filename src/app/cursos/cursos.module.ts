@@ -1,3 +1,6 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +17,7 @@ import { CursoFormComponent } from './curso-form/curso-form.component';
   declarations: [
     CursosComponent,
     CursoFormComponent
+    
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,10 @@ import { CursoFormComponent } from './curso-form/curso-form.component';
     MatCardModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class CursosModule { }
